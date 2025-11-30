@@ -1,0 +1,37 @@
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+python-multipart
+
+# MCP (Model Context Protocol)
+mcp
+
+# LLM Integration
+google-generativeai
+anthropic
+
+# API Clients
+requests
+aiohttp
+
+# Splunk SDK
+splunk-sdk
+
+# Jira
+jira
+
+# Database
+sqlalchemy
+alembic
+
+# Environment & Config
+python-dotenv
+
+# Utilities
+colorama
+python-dateutil
+
+# Development
+pytest
+pytest-asyncio

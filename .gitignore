@@ -1,0 +1,23 @@
+# Ignore environment configuration
+/.env
+
+# Ignore virtual environment
+/venv
+
+# Ignore Visual Studio project files
+/.vs
+
+# Ignore logs directory
+/logs
+
+# Ignore local database file
+/aitta.db
+/aitta_mcp/mcp_servers/__pycache__
+/api/__pycache__
+/config/__pycache__
+/db/__pycache__
+/__pycache__
+/models/__pycache__
+/services/__pycache__
+/aitta_mcp/__pycache__
+/test/aitta.db
