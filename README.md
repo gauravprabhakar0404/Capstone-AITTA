@@ -103,7 +103,7 @@ WORKFLOW: Monitor → Analyze → Enrich → Decide → Act → Audit
 ### 1. Start the Backend
 
 ```bash
-python main.py
+python app.py
 ```
 
 The API will be available at `http://localhost:8000`
@@ -191,10 +191,10 @@ docker build -t Capstone-AITTA:latest .
 
 # Run container
 docker run -d \
-  --name aitta \
+  --name Capstone-AITTA \
   -p 8000:8000 \
   --env-file .env \
-  aitta:latest
+  Capstone-AITTA:latest
 ```
 
 ## ⚙️ Setup Guide

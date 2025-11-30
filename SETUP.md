@@ -259,10 +259,10 @@ docker build -t Capstone-AITTA:latest .
 
 # Run with environment variables
 docker run -d \
-  --name aitta \
+  --name Capstone-AITTA \
   -p 8000:8000 \
   --env-file .env \
-  aitta:latest
+  Capstone-AITTA:latest
 ```
 
 ### 2. Docker Compose (Production)
@@ -272,7 +272,7 @@ Create `docker-compose.yml`:
 ```yaml
 version: '3.8'
 services:
-  aitta:
+  Capstone-AITTA:
     build: .
     ports:
       - "8000:8000"
@@ -309,10 +309,10 @@ For production Kubernetes deployment:
 kubectl apply -f k8s/
 
 # Check pod status
-kubectl get pods -l app=aitta
+kubectl get pods -l app=Capstone-AITTA
 
 # View logs
-kubectl logs -l app=aitta
+kubectl logs -l app=Capstone-AITTA
 ```
 
 ---
