@@ -1,0 +1,61 @@
+@startuml AITTA Architecture
+skinparam backgroundColor #FEFEFE
+skinparam package {
+  BackgroundColor #E1F5FE
+  BorderColor #01579B
+  BorderThickness 2
+}
+skinparam note {
+  BackgroundColor #FFF3E0
+  BorderColor #E65100
+}
+
+title AITTA Architecture Diagram
+
+package "Enterprise IT Environment" as ENT #E1F5FE {
+  [Splunk]
+  [ServiceNow]
+  [Jira]
+  [CMDB]
+  [Monitoring Tools]
+}
+
+package "MCP Layer" as MCP #F3E5F5 {
+  [Model Context Protocol]
+  note right : • Standardized Integration\n• Tool Discovery\n• Secure Communication
+}
+
+package "AITTA Agent Core" as CORE #E8F5E8 {
+  package "AI Planning Engine" as AI {
+    [LLM Analysis]
+    [Priority Logic]
+    [Decision Making]
+  }
+  package "Orchestration Layer" as ORCH {
+    [State Management]
+    [Error Recovery]
+    [Audit Logging]
+  }
+}
+
+package "Data Persistence" as DB #FFF3E0 {
+  [SQLAlchemy ORM]
+  [SQLite/PostgreSQL]
+  [Migration Scripts]
+  [Audit Trail Storage]
+}
+
+ENT --> MCP : integrates via
+MCP --> AI : provides data to
+MCP --> ORCH : orchestrates with
+AI --> DB : stores analysis
+ORCH --> DB : persists state
+
+note as WORKFLOW #FCE4EC
+  **Workflow Process:**
+  Monitor → Analyze → Enrich → Decide → Act → Audit
+end note
+
+WORKFLOW .. DB : results stored
+
+@enduml

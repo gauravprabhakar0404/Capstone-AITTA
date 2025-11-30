@@ -1,0 +1,46 @@
+graph TD
+    subgraph "Enterprise IT Environment"
+        ENT[Splunk<br/>ServiceNow<br/>Jira<br/>CMDB<br/>Monitoring Tools]
+    end
+
+    subgraph "MCP Layer"
+        MCP[Model Context Protocol<br/>• Standardized Integration<br/>• Tool Discovery<br/>• Secure Communication]
+    end
+
+    subgraph "AITTA Agent Core"
+        subgraph "AI Planning Engine"
+            AI[LLM Analysis<br/>Priority Logic<br/>Decision Making]
+        end
+        subgraph "Orchestration Layer"
+            ORCH[State Management<br/>Error Recovery<br/>Audit Logging]
+        end
+    end
+
+    subgraph "Data Persistence"
+        DB[SQLAlchemy ORM<br/>SQLite/PostgreSQL<br/>Migration Scripts<br/>Audit Trail Storage]
+    end
+
+    ENT --> MCP
+    MCP --> AI
+    MCP --> ORCH
+    AI --> DB
+    ORCH --> DB
+
+    %% Workflow
+    MONITOR[Monitor] --> ANALYZE[Analyze]
+    ANALYZE --> ENRICH[Enrich]
+    ENRICH --> DECIDE[Decide]
+    DECIDE --> ACT[Act]
+    ACT --> AUDIT[Audit]
+
+    classDef enterprise fill:#e1f5fe,stroke:#01579b,stroke-width:2px
+    classDef mcp fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef core fill:#e8f5e8,stroke:#1b5e20,stroke-width:2px
+    classDef data fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    classDef workflow fill:#fce4ec,stroke:#880e4f,stroke-width:2px
+
+    class ENT enterprise
+    class MCP mcp
+    class AI,ORCH core
+    class DB data
+    class MONITOR,ANALYZE,ENRICH,DECIDE,ACT,AUDIT workflow
