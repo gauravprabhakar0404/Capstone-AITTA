@@ -121,18 +121,7 @@ python -m http.server 8080
 ### 3. Test the Agent
 or use http://localhost:8000/docs 
 Send a test alert:
-curl -X 'POST' \
-  'http://localhost:8000/api/process-alert' \
-  -H 'accept: application/json' \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "alert_id": "alert-001",
-  "severity": "High",
-  "message": "CPU usage above 95%",
-  "host": "prod-web-03",
-  "timestamp": "2025-11-21T02:10:31.484Z",
-  "metadata": {}
-}'
+curl -X POST "http://localhost:8000/api/process-alert" -H "accept: application/json" -H "Content-Type: application/json" -d "{\"alert_id\":\"alert-001\",\"severity\":\"High\",\"message\":\"CPU usage above 95%\",\"host\":\"prod-web-03\",\"timestamp\":\"2025-11-21T02:10:31.484Z\",\"metadata\":{}}"
 
 
 ## 📡 API Endpoints
