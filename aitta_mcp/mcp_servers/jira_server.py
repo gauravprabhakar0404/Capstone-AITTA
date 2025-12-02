@@ -206,9 +206,9 @@ class JiraMCPServer:
         description = args.get("description")
         priority = args.get("priority", "Medium")
         assignee = args.get("assignee")
-        issue_type = args.get("issue_type", "Task")
+        issue_type = args.get("issue_type", "Task")     
         if USE_MOCK or not self.has_token:
-            return await self._mock_create_ticket(project, summary, priority)
+            return await self._mock_create_ticket(project, summary, priority, assignee)
         
         try:
             # Priority mapping for Jira
